@@ -1,5 +1,6 @@
 class DashboardsController < ApplicationController
   def show
-    render
+    @post = Post.new
+    @posts = current_user.posts
   end
 end

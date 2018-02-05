@@ -1,1 +1,12 @@
 <h1>Dashboards</h1>
+
+<%= form_for @post do |form| %>
+  <%= form.text_field :body, placeholder: "Post here!", required: true %>
+  <%= form.submit "Post" %>
+<% end %>
+
+<% @posts.each do |post| %>
+  <div>
+    <%= post.body %>
+  </div>
+<% end %>
