@@ -10,10 +10,10 @@
 
   <body>
     <% if signed_in? %>
-      Signed in as: <% current_user.email %>
-      <% link_to 'Signed Out', sign_out_path, method: :delete %>
+      Signed in as: <%= current_user.email %>
+      <%= link_to 'Signed Out', sign_out_path, method: :delete %>
     <% else %>
-      <% link_to 'Sign In', sign_in_path %>
+      <%= link_to 'Sign In', sign_in_path %>
     <% end %>
 
     <div id="flash" >
@@ -24,3 +24,4 @@
     <%= yield %>
   </body>
 </html>
+
