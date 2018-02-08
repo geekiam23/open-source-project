@@ -1,4 +1,6 @@
 class LikesController < ApplicationController
+  before_filter :require_login
+
   def create
     current_user.like(post)
     redirect_to root_path
