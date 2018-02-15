@@ -15,19 +15,13 @@ class PostsController < ApplicationController
   end
 
   def content_from_params
-    case params[:post][:content_type]
-    when "Text Post" then TextPost.new(text_post_content_params)
-    when "Pic Post" then PicPost.new(pic_post_content_params)
-    end
+    params[:content_type].new(content_params)
   end
 
-  def text_post_content_params
-    params.require(:post).require(:content).permit(:body)
+  def content_params
+    params.require(:post).require(:content).permit!
   end
 
-  def pic_post_content_params
-    params.require(:post).require(:content).permit(:image)
-  end
 
   def redirect_options_for(post)
     if post.persisted?

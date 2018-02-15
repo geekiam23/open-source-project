@@ -1,4 +1,11 @@
 module PostHelper
+  def post_form_for(content_type)
+    form_for(Post.new, url: content_type.new) do |form| 
+      form.fields_for(:content) { |content_form| yield(content_form) } +
+      form.submit("Post!")
+    end
+  end
+
   def like_button(post)
     if current_user.liked?(post)
       link_to "Unlike", unlike_post_path(post), method: :delete

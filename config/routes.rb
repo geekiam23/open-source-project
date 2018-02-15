@@ -8,7 +8,11 @@ Rails.application.routes.draw do
   end
 
   root to: "homes#show"
-  resources :posts, only: [:create, :show] do
+
+  post "text_posts" => "posts#create", defaults: { content_type: TextPost}
+  post "pic_posts" => "posts#create", defaults: { content_type: PicPost}
+
+  resources :posts, only: [:show] do
     member do
       post "like" => "likes#create"
       delete "unlike" => "likes#destroy"

@@ -1,18 +1,11 @@
 <h1>Dashboards</h1>
 
-<%= form_for @post do |form| %>
-  <%= form.hidden_field :content_type, value: "Text Post" %>
-  <%= form.fields_for :content do |content_form| %>
-    <%= content_form.text_field :body, placeholder: "Post here!", required: true %>
-  <% end %>
-  <%= form.submit "Post" %>
+<%= post_form_for(TextPost) do |form| %>
+  <%= form.text_field :body, placeholder: "Post Here!", required: true %>
 <% end %>
 
-<%= form_for @post do |form| %>
-  <%= form.hidden_field :content_type, value: "Pic Post" %>
-  <%= form.fields_for :content do |content_form| %>
-    <%= content_form.file_field :image, required: true %>
-  <% end %>
-  <%= form.submit "Post" %>
+<%= post_form_for(PicPost) do |form| %>
+  <%= form.file_field :image, required: true %>
 <% end %>
+
 <%= render @posts %>
