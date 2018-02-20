@@ -5,4 +5,5 @@ class Post < ApplicationRecord
   validates :user, presence: true
 
   delegate :username, to: :user
+
 end
