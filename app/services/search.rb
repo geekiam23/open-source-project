@@ -4,9 +4,11 @@ class Search
     @term = term
   end
 
-  def run
-    PostSearchQuery.new(term: "##{term}").to_relation
+  def results
+    PostSearchQuery.new(term: "#{term}").to_relation
   end
 
-  alias results run
+  def to_partial_path
+    "search/search"
+  end
 end
