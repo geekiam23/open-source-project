@@ -8,6 +8,10 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
+  def index
+    @posts = Post.search((params[:q].present? ? params[:q] : '*')).records
+    p '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@'
+  end
   private
 
   def posts_params
