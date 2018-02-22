@@ -12,7 +12,7 @@
   <% @posts.each do |post| %>
     <li>
       <h3>
-        <%= link_to post.title, controller: "posts", action: "show", id: post._id%>
+        <%= link_to post.body, controller: "posts", action: "show", id: post._id%>
       </h3>
     </li>
   <% end %>
