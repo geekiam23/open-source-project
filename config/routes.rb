@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get 'followers/index'
 
   get 'likes/create'
-  get 'searches', to: 'searches#search'
+  get 'search', to: 'posts#search'
 
   constraints Clearance::Constraints::SignedIn.new do
     root to: "dashboards#show"
@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   end
 
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
-  resource :session, only: [:create] 
+  resource :session, only: [:create]
 
   resources :users, only: [:create, :show] do
     resources :followers, only: [:index]

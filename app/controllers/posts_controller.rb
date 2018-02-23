@@ -8,10 +8,14 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
-  def index
-    @posts = Post.search((params[:q].present? ? params[:q] : '*')).records
-    p '@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@'
+  def search
+    # @posts = Elasticsearch::Model.search([:q], [TextPost, PicPost]).results
+    # @posts = Post.content.search((params[:q].present? ? params[:q] : '*')).records
+    # @posts = TextPost.search((params[:q].present? ? params[:q] : '*')).records
+    @posts = Elasticsearch::Model.search(params[:q], [TextPost, PicPost]).records
+
   end
+
   private
 
   def posts_params
