@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   get 'followers/index'
 
   get 'likes/create'
+  get '/posts/show_pic'
+  get '/posts/show_text'
+  get 'search', to: 'posts#search'
 
   constraints Clearance::Constraints::SignedIn.new do
     root to: "dashboards#show"
@@ -12,7 +15,7 @@ Rails.application.routes.draw do
   post "text_posts" => "posts#create", defaults: { content_type: TextPost}
   post "pic_posts" => "posts#create", defaults: { content_type: PicPost}
 
-  resources :posts, only: [:show] do
+  resources :posts, only: [:show, :index] do
     member do
       post "like" => "likes#create"
       delete "unlike" => "likes#destroy"
@@ -20,7 +23,7 @@ Rails.application.routes.draw do
   end
 
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
-  resource :session, only: [:create] 
+  resource :session, only: [:create]
 
   resource :search, only: [:show]
   resources :hashtags, only: [:show]
