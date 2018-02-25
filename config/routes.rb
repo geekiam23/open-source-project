@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   get 'followers/index'
 
   get 'likes/create'
+  get '/posts/show_pic'
+  get '/posts/show_text'
   get 'search', to: 'posts#search'
 
   constraints Clearance::Constraints::SignedIn.new do

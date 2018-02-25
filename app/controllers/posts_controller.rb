@@ -5,15 +5,21 @@ class PostsController < ApplicationController
   end
 
   def show
+    # @post = PicPost.find(params[:id]) || TextPost.find(params[:id])
     @post = Post.find(params[:id])
   end
 
-  def search
-    # @posts = Elasticsearch::Model.search([:q], [TextPost, PicPost]).results
-    # @posts = Post.content.search((params[:q].present? ? params[:q] : '*')).records
-    # @posts = TextPost.search((params[:q].present? ? params[:q] : '*')).records
-    @posts = Elasticsearch::Model.search(params[:q], [TextPost, PicPost]).records
+  def show_text
+    @post = TextPost.find(params[:id])
+  end
 
+  def show_pic
+    @post = PicPost.find(params[:id])
+  end
+
+  def search
+    # @posts = Elasticsearch::Model.search(params[:q], [Post])
+    @posts = Elasticsearch::Model.search(params[:q], [PicPost, TextPost])
   end
 
   private

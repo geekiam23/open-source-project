@@ -1,17 +1,5 @@
 require "elasticsearch/model"
 
-# module Searchable
-#   extend ActiveSupport::Concern
-#
-#   included do
-#     include Elasticsearch::Model
-#
-#     after_commit do
-#       __elasticsearch__.index_document
-#     end
-#   end
-# end
-
 class PicPost < ApplicationRecord
   include Elasticsearch::Model
   include Elasticsearch::Model::Callbacks
@@ -22,6 +10,13 @@ class PicPost < ApplicationRecord
     content_type: { content_type: ["image/jpeg", "image/gif", "image/png" ]},
     size: { in: 0..10.megabytes },
     presence: true
+
+  settings index: { number_of_shards: 1 } do
+    mappings dynamic: 'false' do
+      indexes :id,                  :type => 'keyword'
+      indexes :image_file_name,     :type => 'text', :analyzer => 'snowball'
+    end
+  end
 end
 
 # Delete the previous Posts index in Elasticsearch

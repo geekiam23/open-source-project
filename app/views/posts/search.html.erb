@@ -12,7 +12,11 @@
   <%= @posts.each do |post| %>
     <li>
       <h3>
-        <%= link_to post.body, controller: "posts", action: "show", id: post.id%>
+        <% if post._type == "pic_post" %>
+          <%= link_to post.image_file_name, controller: "posts", action: "show_pic", id: post.id %>
+        <% else post._type == "text_post" %>
+          <%= link_to post.body, controller: "posts", action: "show_text", id: post.id%>
+        <% end %>
       </h3>
     </li>
   <% end %>
