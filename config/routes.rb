@@ -10,8 +10,6 @@ Rails.application.routes.draw do
     root to: "dashboards#show"
   end
 
-  root to: "homes#show"
-
   post "text_posts" => "posts#create", defaults: { content_type: TextPost}
   post "pic_posts" => "posts#create", defaults: { content_type: PicPost}
 
