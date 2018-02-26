@@ -1,4 +1,4 @@
-<%= form_for search_path, method: :get do |f| %>
+<%= form_for :search, url: search_path, method: :get do |f| %>
   <p>
   <%= f.label "Search for" %>
   <%= text_field_tag :q, params[:q] %>
