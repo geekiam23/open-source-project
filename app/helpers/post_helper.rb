@@ -17,7 +17,7 @@ module PostHelper
   def autolink(text)
     text.
       gsub(/@\w+/) { |mention| link_to mention, user_path(mention[1..-1])}.
-      gsub(/#\w+/) { |hashtag| link_to hashtag, url: search_path(hashtag[1..-1])}.
+      gsub(/#\w+/) { |hashtag| link_to :search, url: search_path(hashtag[1..-1]), method: :get}.
       html_safe
   end
 end
