@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   post "text_posts" => "posts#create", defaults: { content_type: TextPost}
   post "pic_posts" => "posts#create", defaults: { content_type: PicPost}
+  post "project_posts" => "posts#create", defaults: { content_type: ProjectPost}
 
   resources :posts, only: [:show, :index] do
     member do

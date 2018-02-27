@@ -4,6 +4,13 @@
   <%= form.text_field :body, placeholder: "Post Here!", required: true %>
 <% end %>
 
+<%= post_form_for(ProjectPost) do |form| %>
+  <%= form.text_field :title, placeholder: "Title", required: true %>
+  <%= form.text_area :body, placeholder: "Description", required: true %>
+  <%= form.text_field :link, placeholder: "Link to Demo" %>
+  <%= form.text_field :repo, placeholder: "Link to Repo" %>
+<% end %>
+
 <%= post_form_for(PicPost) do |form| %>
   <%= form.file_field :image, required: true %>
 <% end %>
