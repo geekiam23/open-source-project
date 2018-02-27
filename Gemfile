@@ -20,6 +20,7 @@ gem 'paperclip'
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
 gem 'bootstrap'
+gem 'acts-as-taggable-on'
 
 group :development, :test do
   gem 'byebug', platform: :mri

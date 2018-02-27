@@ -2,3 +2,5 @@
 <%= autolink project_post.body %>
 <%= link_to project_post.link, "http://#{project_post.link}" %>
 <%= link_to project_post.repo, "http://#{project_post.repo}" %>
+<h4>Tags</h4>
+<p>Tags: <%= project_post.tag_list %></p>

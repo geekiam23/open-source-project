@@ -4,6 +4,14 @@ class PostsController < ApplicationController
     redirect_to :root, redirect_options_for(post)
   end
 
+  def index
+    if params[:tag]
+        @posts = Post.tagged_with(params[:tag])
+    else
+        @posts = Post.all
+    end
+  end
+
   def show
     @post = Post.find(params[:id])
   end

@@ -9,6 +9,7 @@
   <%= form.text_area :body, placeholder: "Description", required: true %>
   <%= form.text_field :link, placeholder: "Link to Demo" %>
   <%= form.text_field :repo, placeholder: "Link to Repo" %>
+  <%= form.text_field :tag_list, placeholder: "Tags" %>
 <% end %>
 
 <%= post_form_for(PicPost) do |form| %>
