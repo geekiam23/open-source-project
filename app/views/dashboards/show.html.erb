@@ -12,11 +12,18 @@
   <%= form.text_field :tag_list, placeholder: "Tags" %>
 <% end %>
 
+<%= post_form_for(MeetingPost) do |form| %>
+  <%= form.text_field :title, placeholder: "Title", required: true %>
+  <%= form.text_area :body, placeholder: "Description", required: true %>
+  <%= form.datetime_field :date %>
+  <%= form.text_field :tag_list, placeholder: "Tags" %>
+<% end %>
+
 <%= post_form_for(JobPost) do |form| %>
   <%= form.text_field :title, placeholder: "Title", required: true %>
   <%= form.text_area :body, placeholder: "Description", required: true %>
   <%= form.text_field :link, placeholder: "Link to Job Website", required: true %>
-  <%= form.text_field :salary, placeholder: "Salary" %>
+  <%= form.number_field :salary, placeholder: "Salary" %>
   <%= form.text_field :location, placeholder: "Location" %>
   <%= form.text_field :tag_list, placeholder: "Tags" %>
 <% end %>

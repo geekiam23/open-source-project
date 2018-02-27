@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   post "pic_posts" => "posts#create", defaults: { content_type: PicPost}
   post "project_posts" => "posts#create", defaults: { content_type: ProjectPost}
   post "job_posts" => "posts#create", defaults: { content_type: JobPost}
+  post "meeting_posts" => "posts#create", defaults: { content_type: MeetingPost}
   get 'tags/:tag', to: 'posts#index', as: :tag
 
   resources :posts, only: [:show, :index] do

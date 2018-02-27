@@ -1,6 +1,6 @@
 <%= autolink job_post.title %>
 <%= autolink job_post.body %>
-<%= job_post.salary %>
+<%=  number_with_delimiter(job_post.salary) %>
 <%= job_post.location %>
 <%= link_to "Apply", "http://#{job_post.link}" %>
 <h4>Tags</h4>
