@@ -22,6 +22,7 @@ gem 'elasticsearch-rails'
 gem 'bootstrap'
 gem 'acts-as-taggable-on'
 gem "react_on_rails"
+gem 'webpacker'
 
 group :development, :test do
   gem 'byebug', platform: :mri
@@ -37,3 +38,5 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'react-rails'
 
+
+gem 'mini_racer', platforms: :ruby
