@@ -21,6 +21,7 @@ gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
 gem 'bootstrap'
 gem 'acts-as-taggable-on'
+gem "react_on_rails"
 
 group :development, :test do
   gem 'byebug', platform: :mri
