@@ -7,7 +7,7 @@ class JobPost < ApplicationRecord
     self.tags.map(&:name).join(', ')
   end
 end
-#
+
 # Delete the previous Posts index in Elasticsearch
 JobPost.__elasticsearch__.client.indices.delete index: JobPost.index_name rescue nil
 
