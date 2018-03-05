@@ -74,7 +74,7 @@ end
   )
   PicPost.create!(
     id: post.content_id,
-    image_file_name:   Faker::LoremPixel.image,
+    image_file_name:   Faker::SlackEmoji.emoji,
     image_content_type: "image/jpeg",
     image_file_size: Faker::Number.between(60000, 120000),
     image_updated_at: Faker::Time.between(2.years.ago, Date.today, :all)

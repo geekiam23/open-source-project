@@ -19,13 +19,13 @@ class PicPost < ApplicationRecord
   end
 end
 
-# Delete the previous Posts index in Elasticsearch
-PicPost.__elasticsearch__.client.indices.delete index: PicPost.index_name rescue nil
-
-# Create the new index with the new mapping
-PicPost.__elasticsearch__.client.indices.create \
-  index: PicPost.index_name,
-  body: { settings: PicPost.settings.to_hash, mappings: PicPost.mappings.to_hash }
-
-# Index all Post records from the DB to Elasticsearch
-PicPost.import
+# # Delete the previous Posts index in Elasticsearch
+# PicPost.__elasticsearch__.client.indices.delete index: PicPost.index_name rescue nil
+#
+# # Create the new index with the new mapping
+# PicPost.__elasticsearch__.client.indices.create \
+#   index: PicPost.index_name,
+#   body: { settings: PicPost.settings.to_hash, mappings: PicPost.mappings.to_hash }
+#
+# # Index all Post records from the DB to Elasticsearch
+# PicPost.import
