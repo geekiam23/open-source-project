@@ -1,7 +1,5 @@
 <h1>Dashboards</h1>
 
-<%= react_component("HelloWorldApp", props: {name: 'John'}) %>
-
 <%= post_form_for(TextPost) do |form| %>
   <%= form.text_field :body, placeholder: "Post Here!", required: true %>
 <% end %>
