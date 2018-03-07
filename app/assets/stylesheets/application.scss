@@ -13,3 +13,34 @@
  *= require_tree .
  *= require_self
  */
+
+ .buttonInside{
+   position:relative;
+   margin-bottom:10px;
+ }
+ #container{
+   width: 300px;
+ }
+ .searchInput{
+   height:35px;
+   width:100%;
+   padding-left:10px;
+   border-radius: 6px;
+ }
+ .searchButton{
+   position:absolute;
+   right: 15px;
+   top: 4px;
+   border:none;
+   height:20px;
+   width:20px;
+   border-radius:100%;
+   outline:none;
+   text-align:center;
+   font-weight:bold;
+   padding:2px;
+ }
+
+.searchbar-container{
+  padding-right: 15px;
+}
