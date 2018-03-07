@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import Sample from './Sample'
+import { Button } from 'reactstrap';
 
 export default class App extends React.Component {
   static propTypes = {
@@ -28,10 +28,12 @@ export default class App extends React.Component {
   render() {
     return (
       <div>
-        <h3 className='btn btn-primary btn-lg'>
+        <h3 className=''>
           Hello, {this.state.name}!
         </h3>
-        <Sample />
+        <Button variant="raised" color="primary">
+          Hello World
+        </Button>
       </div>
     );
   }
