@@ -74,22 +74,22 @@ end
   )
 end
 
-# Create PicPost
-10.times do
-  post = Post.create!(
-    content_type: PicPost,
-    user_id: User.ids.sample,
-    content_id: Faker::Number.unique.between(22, 32)
-  )
-  PicPost.create!(
-    id: post.content_id,
-    image_file_name:   Faker::LoremPixel.image,
-    image_content_type: "image/jpeg",
-    image_file_size: Faker::Number.between(60000, 120000),
-    image_updated_at: Faker::Time.between(2.years.ago, Date.today, :all)
-    # tag_list: Faker::Lorem.words
-  )
-end
+# # Create PicPost
+# 10.times do
+#   post = Post.create!(
+#     content_type: PicPost,
+#     user_id: User.ids.sample,
+#     content_id: Faker::Number.unique.between(22, 32)
+#   )
+#   PicPost.create!(
+#     id: post.content_id,
+#     image_file_name:   Faker::Book.title,
+#     image_content_type: "image/jpeg",
+#     image_file_size: Faker::Number.between(60000, 120000),
+#     image_updated_at: Faker::Time.between(2.years.ago, Date.today, :all)
+#     # tag_list: Faker::Lorem.words
+#   )
+# end
 
 # Create ProjectPost
 10.times do
