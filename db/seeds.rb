@@ -10,7 +10,7 @@
 
 require 'faker'
 
-# Create Users
+# Create testing Users
 admin =
 1.times do
  user = User.create!(
@@ -26,6 +26,15 @@ end
    email: Faker::Internet.unique.email,
    username: Faker::Internet.unique.user_name,
    password: Faker::Lorem.characters(8),
+ )
+end
+
+will =
+1.times do
+ user = User.create!(
+   email: "will23larry@example.com",
+   username: "will23larry",
+   password: "password",
  )
 end
 
@@ -74,7 +83,7 @@ end
   )
   PicPost.create!(
     id: post.content_id,
-    image_file_name:   Faker::SlackEmoji.emoji,
+    image_file_name:   Faker::LoremPixel.image,
     image_content_type: "image/jpeg",
     image_file_size: Faker::Number.between(60000, 120000),
     image_updated_at: Faker::Time.between(2.years.ago, Date.today, :all)
@@ -127,6 +136,14 @@ end
 100.times do
   FollowingRelationship.create!(
     follower: User.first,
+    followed_user: users.sample
+  )
+end
+
+# Create Followering Relationship for will
+100.times do
+  FollowingRelationship.create!(
+    follower: User.last,
     followed_user: users.sample
   )
 end
