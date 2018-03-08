@@ -5,15 +5,13 @@ import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } f
 export default class Header extends React.Component {
   constructor(props) {
     super(props);
-
-    this.toggleNavbar = this.toggleNavbar.bind(this);
     this.state = {
       collapsed: true
     };
+    this.toggleNavbar = this.toggleNavbar.bind(this);
   }
 
   toggleNavbar() {
-    console.log("working");
     this.setState({
       collapsed: !this.state.collapsed
     });
@@ -25,7 +23,9 @@ export default class Header extends React.Component {
           <NavbarBrand href="/" className="mr-auto">TechTalk</NavbarBrand>
           <Search>
           </Search>
-          <NavbarToggler onClick={console.log("working1")} className="mr-2" />
+          <div onClick={() => console.log("working1")}>
+            <NavbarToggler className="mr-2" />
+          </div>
           <Collapse isOpen={!this.state.collapsed} navbar>
             <Nav navbar>
               <NavItem>

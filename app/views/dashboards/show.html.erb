@@ -3,11 +3,15 @@
 
 <h1>Dashboards</h1>
 
+<%= react_component("PostModal", prerender: true) %>
+
 <%= post_form_for(TextPost) do |form| %>
-  <%= form.text_field :body, placeholder: "Post Here!", required: true %>
+  <%= react_component("TextPost", props: @post, prerender: true) %>
+  <%#= form.text_field :body, placeholder: "Post Here!", required: true %>
 <% end %>
 
 <%= post_form_for(ProjectPost) do |form| %>
+  <%#= react_component("ProjectPost", props: @post, prerender: true) %>
   <%= form.text_field :title, placeholder: "Title", required: true %>
   <%= form.text_area :body, placeholder: "Description", required: true %>
   <%= form.text_field :link, placeholder: "Link to Demo" %>
@@ -16,6 +20,7 @@
 <% end %>
 
 <%= post_form_for(MeetingPost) do |form| %>
+  <%= react_component("MeetingPost", props: @post, prerender: true) %>
   <%= form.text_field :title, placeholder: "Title", required: true %>
   <%= form.text_area :body, placeholder: "Description", required: true %>
   <%= form.datetime_field :date %>
@@ -23,6 +28,7 @@
 <% end %>
 
 <%= post_form_for(JobPost) do |form| %>
+  <%#= react_component("TextPost", props: @post, prerender: true) %>
   <%= form.text_field :title, placeholder: "Title", required: true %>
   <%= form.text_area :body, placeholder: "Description", required: true %>
   <%= form.text_field :link, placeholder: "Link to Job Website", required: true %>
@@ -32,7 +38,8 @@
 <% end %>
 
 <%= post_form_for(PicPost) do |form| %>
-  <%= form.file_field :image, required: true %>
+  <%= react_component("PicPost", props: @post, prerender: true) %>
+  <%#= form.file_field :image, required: true %>
 <% end %>
 
 <%= render @dashboard.timeline %>

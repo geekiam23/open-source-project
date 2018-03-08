@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def create
-    post = current_user.posts.create(posts_params)
+    @post = current_user.posts.create(posts_params)
     redirect_to :root, redirect_options_for(post)
   end
 
