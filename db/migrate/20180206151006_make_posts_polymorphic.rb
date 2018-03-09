@@ -15,8 +15,8 @@ class MakePostsPolymorphic < ActiveRecord::Migration[5.0]
       reversible do |dir| #allows us direction for our migration and allows up to go from post to text_post and vice versa
 
         Post.reset_column_information #remove cache
-        Post.find_each do |post| #update past post to correct content type. 
-          dir.up do 
+        Post.find_each do |post| #update past post to correct content type.
+          dir.up do
             text_post = TextPost.create(body: post.body)
             post.update(content_id: text_post.id, content_type: "TextPost")
           end
