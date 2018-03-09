@@ -19,7 +19,7 @@ export default class Header extends React.Component {
   render() {
     return (
       <div>
-        <Navbar color="faded" light>
+        <Navbar color="inverse" light expand="md">
           <NavbarBrand href="/" className="mr-auto">TechTalk</NavbarBrand>
           <Search>
           </Search>

@@ -9,4 +9,6 @@
     <%= like_button(post)  %>
   </div>
 
-  <%= react_component("PostCard", prerender: true) %>
+  <%#= react_component("PostCard", props: @post, prerender: true) %>
+  <%= react_component("PostCard", props: post.content.as_json, prerender: true) %>
+  <%#= react_component("PostCard", props: @post, prerender: true) %>

@@ -43,18 +43,12 @@ GEM
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
     arel (7.1.4)
-    autoprefixer-rails (8.0.0)
-      execjs
     babel-source (5.8.35)
     babel-transpiler (0.7.0)
       babel-source (>= 4.0, < 6)
       execjs (~> 2.0)
     bcrypt (3.1.11)
     bindex (0.5.0)
-    bootstrap (4.0.0)
-      autoprefixer-rails (>= 6.0.3)
-      popper_js (>= 1.12.9, < 2)
-      sass (>= 3.5.2)
     builder (3.2.3)
     byebug (10.0.0)
     clearance (1.16.1)
@@ -139,7 +133,6 @@ GEM
       mime-types
       mimemagic (~> 0.3.0)
     pg (0.21.0)
-    popper_js (1.12.9)
     public_suffix (3.0.2)
     puma (3.11.2)
     rack (2.0.4)
@@ -214,9 +207,6 @@ GEM
     thor (0.20.0)
     thread_safe (0.3.6)
     tilt (2.0.8)
-    turbolinks (5.1.0)
-      turbolinks-source (~> 5.1)
-    turbolinks-source (5.1.0)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
     uglifier (4.1.5)
@@ -239,7 +229,6 @@ PLATFORMS
 
 DEPENDENCIES
   acts-as-taggable-on
-  bootstrap
   byebug
   clearance
   coffee-rails (~> 4.2)
@@ -259,14 +248,10 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   spring
   spring-watcher-listen (~> 2.0.0)
-  turbolinks (~> 5)
   tzinfo-data
   uglifier (>= 1.3.0)
   web-console (>= 3.3.0)
   webpacker
-
-RUBY VERSION
-   ruby 2.5.0p0
 
 BUNDLED WITH
    1.16.1
