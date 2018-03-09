@@ -6,7 +6,8 @@
       <h3>
         <% if post._type == "pic_post" %>
           <%= link_to post.image_file_name, controller: "posts", action: "show_pic", id: post.id %>
-        <% else post._type == "text_post" %>
+        <% end %>
+        <% if post._type == "text_post" %>
           <%= link_to post.body, controller: "posts", action: "show_text", id: post.id%>
         <% end %>
       </h3>
